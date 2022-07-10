@@ -1,22 +1,13 @@
 import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
-import enUS from 'date-fns/locale/en-US'
-import { addHours, format, parse, startOfWeek, getDay } from 'date-fns';
+import { addHours } from 'date-fns';
 
 import { Navbar } from "../";
+import { localizer } from '../../helpers';
 
-const locales = {
-  'en-US': enUS,
-};
 
-const localizer = dateFnsLocalizer({
-  format,
-  parse,
-  startOfWeek,
-  getDay,
-  locales,
-});
+
 
 const events = [{
   title: 'Birthday',
@@ -42,7 +33,7 @@ export const CalendarPage = () => {
         events={events}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500 }}
+        style={{ height: 'calc( 100vh - 80px )' }}
       />
       
     </>
