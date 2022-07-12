@@ -6,26 +6,12 @@ import { addHours } from 'date-fns';
 import { Navbar, CalendarEventBox, CalendarModal } from "../";
 import { localizer } from '../../helpers';
 import { useState } from 'react';
-import { useUiStore } from '../../hooks';
-
-
-
-
-const events = [{
-  title: 'Birthday',
-  notes: 'Buy cake',
-  start: new Date(),
-  end: addHours( new Date(), 2 ),
-  bgColor: '#fafafa',
-  user: {
-    _id: 123,
-    name: 'Jose'
-  }
-}];
-
+import { useCalendarStore, useUiStore } from '../../hooks';
 
 
 export const CalendarPage = () => {
+
+  const { events, setActiveEvent } = useCalendarStore();
 
   const { openDateModal } = useUiStore();
 
@@ -51,7 +37,7 @@ export const CalendarPage = () => {
   };
 
   const onSelect = ( event ) => {
-    console.log('On select', event);
+    setActiveEvent( event );
   };
 
   const onViewChange = ( event ) => {
