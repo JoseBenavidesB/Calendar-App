@@ -1,9 +1,7 @@
 import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
-import { addHours } from 'date-fns';
-
-import { Navbar, CalendarEventBox, CalendarModal } from "../";
+import { Navbar, CalendarEventBox, CalendarModal, FabAddNew} from "../";
 import { localizer } from '../../helpers';
 import { useState } from 'react';
 import { useCalendarStore, useUiStore } from '../../hooks';
@@ -18,7 +16,6 @@ export const CalendarPage = () => {
   const [lastView, setLastView] = useState(localStorage.getItem('lastView') || 'week');
 
   const eventStyleGetter = ( event, start, end, isSelected ) => {
-    //console.log({event, start, end, isSelected});
 
     const style = {
       backgroundColor: '#347CF7',
@@ -43,7 +40,7 @@ export const CalendarPage = () => {
   const onViewChange = ( event ) => {
     localStorage.setItem( 'lastView', event)
 
-  };
+  }; 
 
   return (
     <>
@@ -66,7 +63,7 @@ export const CalendarPage = () => {
       />
 
       <CalendarModal />
-
+      <FabAddNew />
 
     </>
   )

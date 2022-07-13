@@ -26,7 +26,7 @@ export const CalendarModal = () => {
 
     const { isDateModalOpen, closeDateModal } = useUiStore();
 
-    const { activeEvent } = useCalendarStore();
+    const { activeEvent, startSavingEvent } = useCalendarStore();
 
     /* Form Submitted State */
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -47,6 +47,8 @@ export const CalendarModal = () => {
       return ( (title.length > 0 ) ? '' : 'is-invalid' ) 
     }, [title, formSubmitted])
 
+
+    /* Reload when activeEvent change */
     useEffect(() => {
       
       if ( activeEvent !== null ) {
@@ -78,7 +80,7 @@ export const CalendarModal = () => {
     };
 
     /* Handle On Submit form */
-    const onSubmit = (e) => {
+    const onSubmit = async(e) => {
       e.preventDefault();
       setFormSubmitted( true );
 
@@ -89,6 +91,10 @@ export const CalendarModal = () => {
       };
       
       if( title.length <= 0 ) return;
+
+      await startSavingEvent( formValues );
+      closeDateModal();
+      setFormSubmitted( false );
     };
 
 
