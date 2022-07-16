@@ -6,4 +6,4 @@ export * from './calendar/calendaSlice';
 
 export * from './store';
 
-export * from './auth/authSlice';
+//export * from './auth/authSlice';
