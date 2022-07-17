@@ -9,6 +9,10 @@ React, Redux Toolkit, Axios, Date FNS, React Big Calendar, React Date Picker, Re
 ## Back End used techologies:
 Node.js, Express, Express Validator, MongoDB, Mongoose, Postman, Git, Bcrypt.js, JsonWebToken, Moment.
 
+Following this link to test the app:
+
+https://backend-calendar-app-a.herokuapp.com/#/auth/login
+
 ## Screenshots
 
 ### Login / Register
