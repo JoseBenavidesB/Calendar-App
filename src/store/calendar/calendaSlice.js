@@ -33,8 +33,9 @@ export const calendarSlice = createSlice({
         state.events = state.events.map( event => {
           if( event.id === payload.id ){
             return payload;
+            
           }
-
+        state.activeEvent = null;
           return event;
         });
     },
