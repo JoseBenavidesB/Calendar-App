@@ -13,16 +13,16 @@ Node.js, Express, Express Validator, MongoDB, Mongoose, Postman, Git, Bcrypt.js,
 
 ### Login / Register
 
-![Login]("./../screenshot/login.png")
+![Login](./../screenshot/login.png)
 
 ### Home
 
-![Home]("./../screenshot/home.png")
+![Home](./../screenshot/home.png)
 
 ### Create Event
 
-![Event]("./../screenshot/addevent.png")
+![Event](./../screenshot/addevent.png)
 
 ### Event Added
 
-![Event]("./../screenshot/event.png)
+![Event](./../screenshot/event.png)
